@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import Intro.Submenu01;
 import Listas.Submenu02;
 import PilhasFilas.Submenu03;
+import ListaLigada.Submenu04;
 
 public class Menu {
 
@@ -20,7 +21,8 @@ public class Menu {
                     "Escolha uma Opção:\n\n"
                     + "01 - Introdução\n"
                     + "02 - Listas\n"
-                    + "03 - Filas e Pilhas\n"        
+                    + "03 - Filas e Pilhas\n"
+                    + "04 - Lista Ligada\n"
                     + "00 - FIM\n\n"));
             switch (opt) {
                 case 1:// INTRO
@@ -32,6 +34,8 @@ public class Menu {
                  case 3:// PILHAS E FILHAS
                     Submenu03.main(args);
                     break;
+                 case 4://LISTA LIGADA
+                     Submenu04.main(args);
                 case 0:
                     break;
                 default://Tratamento de Erro

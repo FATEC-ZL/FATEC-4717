@@ -2,23 +2,23 @@
  * Classe que controla as operações em uma fila circular com objetos.
  *
  * @author Andréa Zotovici (modificado por Fernando M. Oliveira (RA 114016-1)
- * @version 07/03/2016
+ * @version 14/03/2016
  */
 package Listas;
 
 import javax.swing.JOptionPane;
 
-public class ListaDeAlunos {
+public class ListaDeProdutos {
 
-    private Aluno dados[];
+    private Produto dados[];
     private int tamanho;
 
-    public ListaDeAlunos(int capacidade) {
-        dados = new Aluno[capacidade];
+    public ListaDeProdutos(int capacidade) {
+        dados = new Produto[capacidade];
         tamanho = 0;
     }
     
-    public void adicionaInicio(Aluno e) {
+    public void adicionaInicio(Produto e) {
         if (tamanho == dados.length) {
             System.out.println("ERRO! LISTA CHEIA!");
             JOptionPane.showMessageDialog(null, "ERRO! LISTA CHEIA!");
@@ -31,7 +31,7 @@ public class ListaDeAlunos {
         }
     }
 
-    public void adicionaFinal(Aluno e) {
+    public void adicionaFinal(Produto e) {
 
         if (tamanho == dados.length) {
             System.out.println("ERRO! LISTA CHEIA!");
@@ -42,8 +42,8 @@ public class ListaDeAlunos {
         }
     }
     
-    public Aluno removeInicio() {
-        Aluno r = null;
+    public Produto removeInicio() {
+        Produto r = null;
         if (tamanho == 0) {
             System.out.println("ERRO! Lista Vazia!");
             JOptionPane.showMessageDialog(null, "ERRO! Lista Vazia!");
@@ -58,8 +58,8 @@ public class ListaDeAlunos {
         return r;
     }
     
-    public Aluno removeFinal(){
-        Aluno r = null;
+    public Produto removeFinal(){
+        Produto r = null;
         if(tamanho == 0){
             System.out.println("ERRO! LISTA VAZIA!");
             JOptionPane.showMessageDialog(null, "ERRO!\nLista Vazia!");
@@ -75,21 +75,9 @@ public class ListaDeAlunos {
         String r = "";
         for (int i = 0; i < tamanho; i++) {
             //r = r + " " + dados[i].getRa() + " " + dados[i].getNome() + "\n ";
-            r = r + " " + dados[i].toString();
+            r = r + dados[i].toString() + "\n\n";
         }
-        System.out.println("Vetor: \n" + r);
+        System.out.println("Vetor:\n" + r);
         return r;
-    }
-    
-    public void main (String args[]){//TESTE
-        ListaDeAlunos l1 = new ListaDeAlunos(4);
-        Aluno a = new Aluno (1111111, "Aluno AAA");
-        Aluno b = new Aluno (2222222, "Aluno BBB");
-        Aluno c = new Aluno (3333333, "Aluno CCC");
-        
-        l1.adicionaFinal(b);
-        l1.adicionaFinal(c);
-        l1.adicionaInicio(a);
-        System.out.println(l1.percorre());
     }
 }
